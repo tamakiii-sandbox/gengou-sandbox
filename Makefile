@@ -13,7 +13,7 @@ docker/mysql/initdb.d/02.sql:
 	echo "insert into test values(null, '$(shell ruby -e 'print "\u4ee4".encode("utf-8")')', '\u4ee4');" >> $@
 	echo "insert into test values(null, '$(shell ruby -e 'print "\uf9a8".encode("utf-8")')', '\uf9a8');" >> $@
 	echo "insert into test values(null, '$(shell ruby -e 'print "\u4ee4\u548c".encode("utf-8")')', '\u4ee4\u548c');" >> $@
-	echo "insert into test values(null, '$(shell ruby -e 'print "\u4ee4\uf9a8".encode("utf-8")')', '\u4ee4\uf9a8');" >> $@
+	echo "insert into test values(null, '$(shell ruby -e 'print "\uf9a8\u548c".encode("utf-8")')', '\u4ee4\uf9a8');" >> $@
 
 clean:
 	rm docker/mysql/initdb.d/02.sql
