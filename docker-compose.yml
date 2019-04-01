@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  ruby:
+    build: docker/ruby
+    working_dir: /app
+    volumes:
+      - .:/app
