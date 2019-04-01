@@ -5,3 +5,19 @@ services:
     working_dir: /app
     volumes:
       - .:/app
+
+  mysql:
+    build: docker/mysql
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      TZ: Asia/Tokyo
+      LC_ALL: ja_JP.UTF-8
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - .:/app
+
+volumes:
+  mysql:
