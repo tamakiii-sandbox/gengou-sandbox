@@ -5,6 +5,10 @@ all:
 	ruby -e 'puts "\u337b".encode("utf-8")'
 	ruby -e 'puts "\u4ee4".encode("utf-8")'
 	ruby -e 'puts "\uf9a8".encode("utf-8")'
+	ruby -e 'puts "\u4ee4".encode("utf-8") == "\uf9a8".encode("utf-8")'
+	ruby -e 'puts "令" == "令"'
+	ruby -e 'puts "令" == "令"'
+	ruby -e 'puts "令" == "令"'
 
 docker/mysql/initdb.d/02.sql:
 	touch $@
